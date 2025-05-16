@@ -1,0 +1,10 @@
+services:
+  stausee-build:
+    image: stausee
+    build: .
+    ports:
+      - 8022:8022
+      - 8080:8080
+    volumes:
+      - ./storage:/data/stausee:ro
+      - ./sshd_server.key:/home/stausee/sshd_server.key:ro
